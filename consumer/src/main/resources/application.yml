@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: springboot-dubbo-consumer
+dubbo:
+  application: ${spring.application.name}
+  scan:
+    base-packages: me.jianghs.springbootdubbo.provider.service.impl
+  registry:
+    address: zookeeper://139.196.190.46:2181
+    timeout: 60000
+  config-center:
+    timeout: 60000
